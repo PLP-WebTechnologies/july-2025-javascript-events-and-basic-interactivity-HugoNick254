@@ -1,0 +1,31 @@
+html.dark {
+    color-scheme: dark
+}
+body {
+    font-family: 'Times New Roman', sans-serif;
+    transition: background-color 0.2s, color 0.2s;
+}
+.comtainer {
+    max-width: 800px;
+    margin: auto;
+}
+.section-header {
+    font-size: 2rem;
+    margin-bottom: auto;
+    text-align: left;
+}
+.faq-item-title {
+    cursor: crosshair;
+    user-select: none;
+}
+error-message {
+    display: none;
+}
+.faq-item-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
+}
+.password-toggle {
+    cursor: crosshair;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="vieport" content="width=device-width, intial-scale=1.0">
+        <title>Interactive Web Features</title>
+        <!--Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Link to external stylesheet -->
+        <link rel="stylesheet" href="stylez6.css">
+    </head>
+    <body class="bg-slate-50:bg-slate-900 text-slate-800 dark:text-slate-200 p-8">
+        <!-- Header Section-->
+        <header class="container my-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Interactive Web Page</h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400">
+                A demonstration of JavaScript event handling, interactive elements and form validation.
+            </p>
+        </header>
+
+        <!--Interactive Elements Section-->
+        <main class="container bg-white dark:bg-slate-800 p-6 sm:p-10 rounded-2xl shadow-x! space-y-12">
+            <!--Light/Dark Mode Toggle-->
+            <section>
+                <h2 class="section-header">Light/Dark Mode Toggle</h2>
+                <div class="flex justify-left">
+                    <button id="themeToggle" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition-colors duration-100">
+                        Toggle Dark Mode
+                    </button>
+                </div>
+            </section>
+
+            <!-- Collapsible FAQ Section -->
+            <section>
+                <h2 class="section-header">FAQ</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-slate-100 dark:bg-slate-700 p-4 rounded-x1 shadow">
+                        <div class="faq-item-title flex justify-between items-center text-1g font-semibold">
+                            <span>What is JavaScript used for?</span>
+                            <span class="text-2xl font-bold transition-transform duration-300 dark:border-slate-600">+</span>
+                        </div>
+                        <div class="faq-item-answer mt-2 pt-2 border-t border-slate-300 dark:border-slate-600">
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                JavaScript is a programming language that enables you to create dynamically updating content, control multimedia, animate images and much more. It's used on almost every website.
+                            </p>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-slate-100 dark:bg-slate-700 p-4 rounded-x1 shadow">
+                        <div class="faq-item-title flex justify-between items-center text-1g font-semibold">
+                            <span>How do I add an event listener?</span>
+                            <span class="text-2xl font-bold transition-transform duration-300 dark:border-slate-600">+</span>
+                        </div>
+                        <div class="faq-item-answer mt-2 pt-2 border-t border-slate-300 dark:border-slate-600">
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                You use the `.addEvetListener()` method on an element. 
+                                It takes 2 arguments: the type of event to listen for (e.g. `'click'`), and the function to run when the event occurs.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- FAQ Iem 3 -->
+                    <div class="faq-item bg-slate-100 dark:bg-slate-700 p-4 rounded-x1 shadow">
+                        <div class="faq-item-title flex justify-between items-center text-1g font-semibold">
+                            <span>What is the DOM?</span>
+                            <span class="text-2xl font-bold transition-transform duration-300 dark:border-slate-600">+</span>
+                        </div>
+                        <div class="faq-item-answer mt-2 pt-2 border-t border-slate-300 dark:border-slate-600">
+                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                The Document Object Model (DOM) is a porgramming interface for web documents.
+                                It represents the page so that programs can change the document structure, style and content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+
+            <!-- Form Validation Section -->
+            <section>
+                <h2 class="section-header">Form Validation</h2>
+                <div id="successMessage" class="hidden bg-green-100 text-green-700 p-4 rounded-x1 mb-4 text-centre shadow">
+                    Form submitted successfully!
+                </div>
+                <form id="registrationForm" class="space-y-6">
+                    <!-- Name Field-->
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1">Full Name</label>
+                        <input type="text" id="name" name="name">
+                        <p id="nameError" class="error-message text-xs text-red-500 mt-1">Please enter your full name</p>
+                    </div>
+                    <!-- Email Field-->
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                        <input type="email" id="email" name="email">
+                        <p id="emailError" class="error-message text-xs text-red-500 mt-1">Please enter a valid email address</p>
+                    </div>
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password">
+                            <span id="passwordToggle" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 password-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </div>
+                        <p id="passwordError" class="error-message text-xs text-red mt-1">Password must be at least 8 characters long, contain a special character(#, /, $ etc) and a number</p>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-100">
+                        Submit
+                    </button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Link to the external script file -->
+        <script src="sript6.js" defer></script>
+        
+    </body>
+</html>
